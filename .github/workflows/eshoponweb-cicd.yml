@@ -8,7 +8,7 @@ env:
   RESOURCE-GROUP: rg-eshoponweb-phenix
   LOCATION: westeurope
   TEMPLATE-FILE: infra/webapp.bicep
-  SUBSCRIPTION-ID: /subscriptions/2a93f0f4-5354-4454-8032-cb0c45480931/resourceGroups/rg-eshoponweb-phenix
+  SUBSCRIPTION-ID: /subscriptions/2a93f0f4-5354-4454-8032-cb0c45480931
   WEBAPP-PHENIX: eShopOnWeb
 
 
