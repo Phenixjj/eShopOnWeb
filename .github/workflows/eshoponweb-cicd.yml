@@ -9,7 +9,7 @@ env:
   LOCATION: westeurope
   TEMPLATE-FILE: infra/webapp.bicep
   SUBSCRIPTION-ID: /subscriptions/2a93f0f4-5354-4454-8032-cb0c45480931/resourceGroups/rg-eshoponweb-phenix
-  WEBAPP-NAME: eshoponweb-webapp-phenix
+  WEBAPP-PHENIX: eShopOnWeb
 
 
 jobs:
@@ -84,7 +84,7 @@ jobs:
         subscriptionId: ${{ env.SUBSCRIPTION-ID }}
         resourceGroupName: ${{ env.RESOURCE-GROUP }}
         template: bicep-template/webapp.bicep
-        parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
+        parameters: 'webAppName=${{ env.WEBAPP-PHENIX }} location=${{ env.LOCATION }}'
         failOnStdErr: false   
     
     # Publish website to Azure App Service (WebApp)
@@ -102,4 +102,4 @@ jobs:
       uses: Azure/cli@v2
       with:
         inlineScript: |
-             az webapp deploy --name ${{ env.WEBAPP-NAME }} --resource-group ${{ env.RESOURCE-GROUP }} --src-path .net-app/app.zip --type zip
+             az webapp deploy --name ${{ env.WEBAPP-PHENIX }} --resource-group ${{ env.RESOURCE-GROUP }} --src-path .net-app/app.zip --type zip
